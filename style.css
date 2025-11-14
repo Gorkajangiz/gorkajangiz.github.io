@@ -1,0 +1,768 @@
+/*
+Paleta de colores:
+Negro: #0f0f0f
+Púrpura: #1A0B2E
+Púrpura letras: #8B5CF6
+Tarjetas: #1A1A1A
+*/
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYHEAVYITALIC.OTF') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYLIGHTITALIC.OTF') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYTHINITALIC.OTF') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF') format('opentype');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+* {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    line-height: 1.6;
+    min-height: 200vh;
+}
+
+.CabeceraPrincipal {
+    position: static;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.98);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+    display: flex;
+    justify-content: center;
+    padding: 1.2rem 5%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.CabeceraPrincipalContenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.CabeceraPrincipalLogo {
+    flex: 1;
+}
+
+.CabeceraPrincipalTitulo {
+    color: #8b5cf6;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.CabeceraPrincipalNavegacionCentro {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.CabeceraPrincipalEnlace {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CabeceraPrincipalTextoEnlace {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.CabeceraPrincipalSubrayado {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.CabeceraPrincipalEnlace:hover {
+    color: #8b5cf6;
+}
+
+.CabeceraPrincipalEnlace:hover .CabeceraPrincipalSubrayado {
+    width: 100%;
+}
+
+.CabeceraPrincipalContactos {
+    display: flex;
+    gap: 0.8rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.EnlaceContacto {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    border-radius: 12px;
+    background: rgba(139, 92, 246, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 45px;
+    height: 45px;
+}
+
+.EnlaceContacto:hover {
+    color: white;
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.ContenidoPrincipal {
+    padding: 0;
+}
+
+.SeccionInicio {
+    background-image: url(res/fondo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.SeccionInicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 13, 0.7);
+    z-index: 1;
+}
+
+.ContenidoInicio {
+    position: relative;
+    z-index: 2;
+}
+
+.TituloInicio {
+    font-size: 6rem;
+    /*3*/
+    margin-bottom: 0.5rem;
+    color: #8b5cf6;
+}
+
+.TituloInicio span {
+    color: #8b5cf6;
+    font-weight: bold;
+}
+
+.SubtituloInicio {
+    font-weight: 400;
+    color: #aaa;
+    font-size: 3rem;
+    /*1.5*/
+    margin-bottom: 1rem;
+}
+
+.TextoInicio {
+    margin: 1rem 0 2rem;
+    color: #CCCCCC;
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+.FotoInicio {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FotoInicio img {
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.SeccionConoceme {
+    background: #1a0b2e;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.TituloSeccion {
+    font-size: 2.5rem;
+    color: #8b5cf6;
+}
+
+.TablaConoceme {
+    border-collapse: collapse;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.FilaTablaConoceme {
+    border-bottom: 1px solid black;
+}
+
+.FilaTablaConoceme:last-child {
+    border-bottom: none;
+}
+
+.TablaConoceme td {
+    padding: 16px 20px;
+    text-align: left;
+    background-color: #1a1a1a;
+}
+
+.TablaConoceme td:first-child {
+    font-weight: 500;
+    background-color: #1a1a1a;
+    width: 25%;
+    border-right: 1px solid black;
+    color: #CCCCCC;
+}
+
+.RespuestaTablaConoceme {
+    outline: none;
+    padding: 16px 20px;
+    border: none;
+    color: #CCCCCC;
+}
+
+.ContenedorFoto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.FotoPerfil {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid #8b5cf6;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+}
+
+.SeccionProyectos {
+    border-bottom: 1px solid #2e2e2e;
+    background: #0f0f0f;
+}
+
+.TarjetaProyecto {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #2e2e2e;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.TarjetaProyecto:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+}
+
+.TituloProyecto {
+    color: #8b5cf6;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.DescripcionProyecto {
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.TecnologiasProyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.EtiquetaTecnologia {
+    background: #2e2e2e;
+    color: #8b5cf6;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+}
+
+.SeccionEstudios {
+    background: #0f0f0f;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.TarjetaEstudio {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #2e2e2e;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.TarjetaEstudio:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+}
+
+.TituloEstudio {
+    color: #8b5cf6;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.InstitucionEstudio {
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.FechaEstudio {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.SeccionExperiencia {
+    background: #1a0b2e;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+.TarjetaExperiencia {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid #2e2e2e;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.TarjetaExperiencia:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+}
+
+.TituloExperiencia {
+    color: #8b5cf6;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.EmpresaExperiencia {
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.FechaExperiencia {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.DescripcionExperiencia {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.GridIconos {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+
+.ItemIcono {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ContenedorIcono {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.ContenedorIcono i {
+    font-size: 1.8rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.ItemIcono:hover .ContenedorIcono {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(139, 92, 246, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ItemIcono:hover .ContenedorIcono i {
+    transform: scale(1.1);
+}
+
+.TooltipIcono {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: #1a1a1a;
+    backdrop-filter: blur(10px);
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    min-width: 140px;
+    text-align: center;
+}
+
+.TooltipIcono::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.95);
+}
+
+.TooltipIcono strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.TooltipIcono p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #cccccc;
+    line-height: 1.3;
+}
+
+.ItemIcono:hover .TooltipIcono {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+.ContenedorIcono::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ItemIcono:hover .ContenedorIcono::before {
+    opacity: 1;
+}
+
+.GridIconos .ItemIcono:nth-child(n+8) .TooltipIcono {
+    bottom: auto;
+    top: 100%;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.GridIconos .ItemIcono:nth-child(n+8) .TooltipIcono::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: rgba(255, 255, 255, 0.95);
+}
+
+.GridIconos .ItemIcono:nth-child(n+8):hover .TooltipIcono {
+    transform: translateX(-50%) translateY(15px);
+}
+
+.SeccionPortafolio {
+    background: #0f0f0f;
+}
+
+.TarjetaPortafolio {
+    background: #1a1a1a;
+    border-radius: 16px;
+    padding: 1.5rem 2.5rem;
+    border: 1px solid #2e2e2e;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    min-height: 120px;
+}
+
+.TarjetaPortafolio:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+}
+
+.ContenidoTarjetaPortafolio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.InfoTarjetaPortafolio {
+    flex: 1;
+}
+
+.TituloPortafolio {
+    color: #8b5cf6;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.DescripcionPortafolio {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.DetallesPortafolio {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+.DescargaPortafolio {
+    flex-shrink: 0;
+}
+
+.BotonDescarga {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+    text-decoration: none;
+}
+
+.BotonDescarga:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    text-decoration: none;
+}
+
+.BotonDescarga:active {
+    transform: scale(0.98);
+}
+
+.CabeceraFlotante {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    transition: bottom 0.6s ease;
+    z-index: 999;
+    animation: MostrarCabeceraFlotante linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: 100px 200px;
+}
+
+@keyframes MostrarCabeceraFlotante {
+    to {
+        bottom: 30px;
+    }
+}
+
+.ContenedorCabeceraFlotante {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.BotonNavegacion {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BotonNavegacion:hover {
+    background-color: rgba(163, 163, 163, 0.3);
+    transform: scale(1.15);
+}
+
+.EnlaceBotonNavegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.IconoBotonNavegacion {
+    font-size: 22px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.BotonNavegacion:hover .IconoBotonNavegacion {
+    transform: scale(1.1);
+}
+
+.EtiquetaBotonNavegacion {
+    display: none;
+}
+
+.PiePagina {
+    color: #666;
+    background-color: #0a0a0a;
+    border-top: 1px solid #2e2e2e;
+}
