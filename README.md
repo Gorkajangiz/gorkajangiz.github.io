@@ -9,4 +9,4 @@ Un portafolio personal con mis datos de contacto para entregar a diferentes empr
 <h2>🖥️ Capturas de la aplicación</h2>
 
 <h3>Siempre es más valioso verlo por uno mismo:</h3>
-<a href="gorkajangiz.com">¡Click aquí!</a>
+<a href="https://gorkajangiz.com">¡Click aquí!</a>
