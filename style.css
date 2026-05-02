@@ -57,6 +57,12 @@ body {
     color: var(--bg-dark);
 }
 
+.noDecoLink {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: flex; /* Ensure it behaves like the div it replaces */
+}
+
 /* Header */
 .header-fixed {
     position: fixed;
@@ -1557,7 +1563,8 @@ td.ContributionCalendar-day {
 .timeline-dot {
     position: absolute;
     left: -35px;
-    top: 25px; /* Adjusted to align with shifted content */
+    top: 25px;
+    /* Adjusted to align with shifted content */
     width: 16px;
     height: 16px;
     background: var(--primary-green);
@@ -1575,7 +1582,8 @@ td.ContributionCalendar-day {
     border: 1px solid rgba(0, 212, 160, 0.15);
     transition: all 0.3s ease;
     position: relative;
-    margin-top: 15px; /* Moved down slightly on PC */
+    margin-top: 15px;
+    /* Moved down slightly on PC */
 }
 
 .timeline-content:hover {
@@ -1620,7 +1628,8 @@ td.ContributionCalendar-day {
     color: var(--primary-green);
     background: rgba(10, 10, 10, 0.8);
     padding: 4px 12px;
-    border-radius: 50px; /* More "bubble" like */
+    border-radius: 50px;
+    /* More "bubble" like */
     border: 1px solid rgba(0, 212, 160, 0.3);
     white-space: nowrap;
     display: inline-flex;
@@ -1964,6 +1973,11 @@ td.ContributionCalendar-day {
     font-size: 0.7rem;
 }
 
+.noDecoLink {
+    color: black;
+    text-decoration: none;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
     .hero-title {
@@ -2009,7 +2023,8 @@ td.ContributionCalendar-day {
     }
 
     .social-links {
-        display: none; /* Hide top social links on mobile to save space */
+        display: none;
+        /* Hide top social links on mobile to save space */
     }
 
     .mobile-social-links {
@@ -2165,4 +2180,3 @@ td.ContributionCalendar-day {
         gap: 1rem;
     }
 }
-
