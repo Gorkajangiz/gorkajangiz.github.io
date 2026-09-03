@@ -60,7 +60,8 @@ body {
 .noDecoLink {
     text-decoration: none !important;
     color: inherit !important;
-    display: flex; /* Ensure it behaves like the div it replaces */
+    display: flex;
+    /* Ensure it behaves like the div it replaces */
 }
 
 /* Header */
@@ -787,7 +788,7 @@ td.ContributionCalendar-day {
 }
 
 .donut-chart {
-    width: 100%;
+    width: 85%;
     height: 100%;
     border-radius: 50%;
     background: conic-gradient(var(--primary-green) 0% 40%,
@@ -2178,5 +2179,299 @@ td.ContributionCalendar-day {
     .footer-links {
         justify-content: center;
         gap: 1rem;
+    }
+}
+
+/* ===== EXPERIENCE MODAL (Windows-like) ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.windows-modal {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 160, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 212, 160, 0.1);
+    width: 90%;
+    max-width: 780px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modal-overlay.active .windows-modal {
+    transform: scale(1);
+}
+
+/* Title bar */
+.windows-titlebar {
+    background: rgba(5, 5, 5, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.windows-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.windows-title i {
+    color: var(--primary-green);
+    font-size: 1rem;
+}
+
+.windows-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.win-btn {
+    width: 32px;
+    height: 28px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-muted);
+    line-height: 1;
+}
+
+.win-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+}
+
+.win-btn.close-btn {
+    font-size: 0.9rem;
+}
+
+.win-btn.close-btn:hover {
+    background: #e81123;
+    color: #fff;
+}
+
+.win-btn.minimize-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+}
+
+/* Modal body */
+.windows-body {
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.windows-left {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    min-width: 0;
+}
+
+.windows-left h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-green), var(--primary-green-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.windows-left .win-company {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.windows-left .win-company i {
+    color: var(--primary-green);
+    font-size: 0.7rem;
+}
+
+.windows-left .win-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+.windows-left .win-date-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(0, 212, 160, 0.1);
+    border: 1px solid rgba(0, 212, 160, 0.25);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--primary-green);
+    align-self: flex-start;
+}
+
+.windows-right {
+    width: 50%;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.windows-right img {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 212, 160, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.windows-right img:hover {
+    transform: scale(1.02);
+}
+
+/* Experience card clickable styles */
+.experience-card {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.experience-card::after {
+    content: '\f35d';
+    /* info circle icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::after {
+    opacity: 1;
+}
+
+.experience-card:hover {
+    border-color: var(--primary-green) !important;
+    box-shadow: 0 8px 25px rgba(0, 212, 160, 0.15) !important;
+    transform: translateY(-5px) !important;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .windows-modal {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .windows-body {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .windows-left {
+        padding: 1.5rem;
+        order: 2;
+    }
+
+    .windows-right {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        order: 1;
+    }
+
+    .windows-right img {
+        max-height: 180px;
+    }
+
+    .windows-left h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .windows-left {
+        padding: 1.2rem;
+    }
+
+    .windows-left h2 {
+        font-size: 1rem;
+    }
+
+    .windows-left .win-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .win-btn {
+        width: 26px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+
+    .windows-title {
+        font-size: 0.75rem;
+        gap: 6px;
     }
 }
